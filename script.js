@@ -1,4 +1,4 @@
-setInterval(function() {
+function updateTime() {
 let londonElement = document.querySelector("#london");
 let londonDateElement = londonElement.querySelector(".date");
 let londonTimeElement = londonElement.querySelector(".time");
@@ -14,4 +14,7 @@ let newYorkTimeElement = newYorkElement.querySelector(".time");
 let newYorkTime = moment().tz("America/New_York");
 
 newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
-newYorkTimeElement.innerHTML = newYorkTime.format("h:mm:ss [<small>]A[</small>]");}, 1000);
+newYorkTimeElement.innerHTML = newYorkTime.format("h:mm:ss [<small>]A[</small>]");
+} 
+updateTime();
+setInterval(updateTime, 1000);
